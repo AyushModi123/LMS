@@ -10,9 +10,6 @@ from schemas import StudentDetailsSchema, PatchStudentSchema
 
 router = APIRouter(prefix="/students", tags=["Students"])
 
-#660fe379370d151b5e0a7ea9
-#660fe50418d1840ae638e75c
-
 # Create Student
 @router.post("", response_model=MongoDBResponseModel)
 async def create_student(student: StudentDetailsSchema, collection: Collection = Depends(get_db)):
